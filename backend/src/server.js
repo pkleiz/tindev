@@ -1,11 +1,14 @@
 const express = require('express');
-const routes = require('./routes');
 const mongoose = require('mongoose');
+const cors = require('cors');
+
+const routes = require('./routes');
 
 const server = express();
 
-mongoose.connect('mongodb+srv://pkleiz:12931408@cluster0-qfss6.mongodb.net/omnistack8?retryWrites=true&w=majority',{useNewUrlParser:true});
+mongoose.connect('mongodb+srv://pkleiz:A12931408a@cluster0-qfss6.mongodb.net/test?retryWrites=true&w=majority',{useNewUrlParser:true});
 
+server.use(cors());
 server.use(express.json());
 server.use(routes);
 
